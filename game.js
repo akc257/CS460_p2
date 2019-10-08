@@ -110,14 +110,17 @@ function keydownEventHandler(e) {
 
   if (e.keyCode == 83) { // S key
     man.position.y += 10;
+    sound.play();
   }
 
   if (e.keyCode == 65) { // A key
     man.position.x -= 10;
+    sound.play();
   }
 
   if (e.keyCode == 68) { // D key
     man.position.x += 10;
+    sound.play();
   }
 
   if (man.position.x == alien.position.x && man.position.y == alien.position.y ){
@@ -156,7 +159,7 @@ function end_game()
             thank.position.x = 0;
             thank.position.y = 0;
             stage.addChild(thank);
-            createjs.Tween.get(hero.position).to({x: new_x, y: new_y}, 1000, createjs.Ease.bounceOut);
+            createjs.Tween.get(thank.position).to({x: new_x, y: new_y}, 1000, createjs.Ease.bounceOut);
 
         }
 }
